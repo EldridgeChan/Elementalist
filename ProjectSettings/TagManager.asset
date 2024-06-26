@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Spirit
+  - LeaderboardBtn
+  - Casting
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Enemy
+    uniqueID: 3478302073
+    locked: 0
+  - name: Spirit
+    uniqueID: 2641616269
+    locked: 0
+  - name: CastingHand
+    uniqueID: 2384283151
+    locked: 0
+  - name: UI
+    uniqueID: 4129262311
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b38bf99637edd49a8560b3caed3d7e, type: 3}
+  m_Name: GameScriptableObject
+  m_EditorClassIdentifier: 
+  SpiritRotateSpeed: 45
+  SpiritMaxSpeed: 2
+  SpiritAcceleration: 1
+  SpiritMinTimer: 2
+  SpiritMaxTimer: 6
+  SpiritCollectRotateSpeed: 540
+  SpiritCollectTime: 1
+  SpiritRotateDistance: 0.3
+  SpiritEnterTimer: 2
+  SpiritEnterMax: {x: 2.7, y: 4.9}
+  SpiritEnterMin: {x: -2.7, y: -3}
+  SpiritSpawnY: 7
+  SpiritSpawnX: 10
+  SpiritTypes:
+  - {fileID: 2836878370583879988, guid: b9f9857c318d2ec40ba261ae35a17306, type: 3}
+  - {fileID: 2836878370583879988, guid: 92a209b6559b1084e87610e0db7da385, type: 3}
+  - {fileID: 2836878370583879988, guid: 113756c7174007942a64f1053fedd34d, type: 3}
+  - {fileID: 2836878370583879988, guid: 8c9d526bed3358a47b814131a5732434, type: 3}
+  SpiritNaturalSpawnTimer: 8
+  SpiritNaturalSpawnNumber: 2
+  SpiritStartSpawnNumber: 8
+  SpiritTailPointDistance: 0.1
+  SpiritTailPointOffSetT: 0.2
+  SpiritTailPointExpireTime: 0.8
+  EnemyDefaultHealth: 100
+  EnemyHealthMul: 1.05
+  EnemyDefaultDamage: 15
+  EnemyDamageMul: 1.02
+  EnemyDefaultSpeed: 5
+  EnemySpeedMul: 0.995
+  WeakElementMul: 1.5
+  StrongElementMul: 0.5
+  EnemySpawnTimer: 5
+  damageTextSpawnRadius: 100
+  elemntColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.8207547, g: 0.23967439, b: 0.19744569, a: 1}
+  - {r: 0.40826476, g: 0.8679245, b: 0.33980063, a: 1}
+  - {r: 0.5849056, g: 0.4331776, b: 0.26762193, a: 1}
+  - {r: 0.26059094, g: 0.64533544, b: 0.9056604, a: 1}
+  EnemyTypes:
+  - {fileID: 218463970867152215, guid: bb25fc968469a464796bf5656acf6ebf, type: 3}
+  - {fileID: 2159984792547605422, guid: 637527b7525a5a143983ba79c92aa308, type: 3}
+  - {fileID: 1617836471487023669, guid: ca3ccfa9bc8a9fe4c9c1844948e46020, type: 3}
+  - {fileID: 3305635078032063695, guid: b571e4ab8ad6f5b47bfe7a1ce76bd996, type: 3}
+  PlayerDefaultHealth: 200
+  CastMinYPos: 0
+  CastMoveMaxXPos: 0.5
+  CastDirChangeBuffer: 0.2
+  CastReleaseNumber: 8
+  scorePerPage: 6
+  leaderboardDistance: 150
+  creditStartPos: -600
+  creditEndPos: 2230
+  creditScrollSpeed: 150
+  creditEndTimer: 5
+  spellPerPage: 4
+  spellDistance: 200
+  BakudanLoadTime: 3
+  BakudanTextShowTimerFirst: 6
+  BakudanTextShowTimerSecond: 4
