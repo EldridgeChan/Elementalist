@@ -27,3 +27,18 @@ public enum SceneList
     LeaderBoard,
     ChikyuuHakaiBakudan
 }
+
+public enum VisualEffect
+{
+    none = -1,
+    FireBall,
+    WindBlade,
+    RockShot,
+    WaterSlash,
+    SteamShot,
+    HotSpring,
+    HealingWind,
+    SplinterTurnado,
+    GatherElement,
+    FailCast
+}

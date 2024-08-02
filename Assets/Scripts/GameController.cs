@@ -33,6 +33,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private CastBallBehave castBall;
     public CastBallBehave CastBall { get { return castBall; } }
+    [SerializeField]
+    private Animator effectAnmt;
 
     private List<SpiritBehave> collectedSpirits = new List<SpiritBehave>();
     private List<OverTimeEffect> overTimeEffects = new List<OverTimeEffect>();
@@ -168,12 +170,12 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void showDamageText(float damage, SpiritType element)
+    public void showDamageText(float damage, SpiritType element, bool isWeak)
     {
         DamageText damageText = Instantiate(damageTextPrefab, damageTextParent).GetComponent<DamageText>();
         float distance = Random.Range(0.0f, GameManager.Instance.GameScriptObj.damageTextSpawnRadius);
         float angle = Random.Range(0.0f, 360.0f);
-        damageText.init(element, damage, new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * distance);
+        damageText.init(element, damage, new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * distance, isWeak);
     }
 
     public void healPlayer(float amount)
@@ -216,5 +218,14 @@ public class GameController : MonoBehaviour
     private void loadBoom()
     {
         GameManager.Instance.LoadSceneMan.loadScene(SceneList.ChikyuuHakaiBakudan);
+    }
+
+    public void PlayMagicVisualEffect(VisualEffect visualEffect)
+    {
+        if (visualEffect != VisualEffect.none)
+        {
+            effectAnmt.transform.position = castBall.transform.position;
+            effectAnmt.SetTrigger(visualEffect + "");
+        }
     }
 }

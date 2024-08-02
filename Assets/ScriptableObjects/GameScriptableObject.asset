@@ -19,7 +19,7 @@ MonoBehaviour:
   SpiritMaxTimer: 6
   SpiritCollectRotateSpeed: 540
   SpiritCollectTime: 1
-  SpiritRotateDistance: 0.3
+  SpiritRotateDistance: 0.5
   SpiritEnterTimer: 2
   SpiritEnterMax: {x: 2.7, y: 4.9}
   SpiritEnterMin: {x: -2.7, y: -3}
@@ -36,6 +36,8 @@ MonoBehaviour:
   SpiritTailPointDistance: 0.1
   SpiritTailPointOffSetT: 0.2
   SpiritTailPointExpireTime: 0.8
+  SpiritWallOffset: 0.5
+  SpiritHandWallOffset: 1
   EnemyDefaultHealth: 100
   EnemyHealthMul: 1.05
   EnemyDefaultDamage: 15

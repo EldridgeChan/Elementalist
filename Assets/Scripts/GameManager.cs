@@ -32,14 +32,11 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            DestroyImmediate(gameObject);
-            //Destroy(gameObject);
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
         if (!loadSceneMan) { loadSceneMan = GetComponent<LoadSceneManager>(); }
 
         for (int i = 0; i < SpellScriptObj.spells.Length; i++)

@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField]
+    public static InputManager Instance { get; private set; }
     private Camera mainCam;
+    public Camera MainCam { 
+        get { 
+            if (mainCam == null)
+            {
+                mainCam = Camera.main;
+            }
+            return mainCam; 
+        } 
+    }
 
-    private void Start()
+    private void Awake()
     {
-        if (mainCam == null) { mainCam = Camera.main; }
+        if (Instance == null) { Instance = this; }
     }
 
     void Update()
@@ -21,7 +30,6 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (mainCam == null) { mainCam = Camera.main; }
             tryRaycastMouse();
         }
         if (Input.GetMouseButtonUp(0))
@@ -35,7 +43,7 @@ public class InputManager : MonoBehaviour
 
     private void tryRaycastMouse()
     {
-        RaycastHit2D hit = Physics2D.Raycast(mainCam.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
+        RaycastHit2D hit = Physics2D.Raycast(MainCam.ScreenToWorldPoint(Input.mousePosition), Vector3.forward);
         if (hit.collider != null)
         {
             if (hit.collider.gameObject.CompareTag("Spirit"))

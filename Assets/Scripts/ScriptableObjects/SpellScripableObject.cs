@@ -14,10 +14,12 @@ public class SpellScripableObject : ScriptableObject
             if (correctSize(spells[i].cost.Length, spirits) && checkCost(spells[i], spirits))
             {
                 GameManager.Instance.KnowSpells[i] = true;
+                GameManager.Instance.GameCon.PlayMagicVisualEffect(spells[i].visualEffect);
                 spells[i].applyEffects();
                 return true;
             }
         }
+        GameManager.Instance.GameCon.PlayMagicVisualEffect(VisualEffect.FailCast);
         return false;
     }
 

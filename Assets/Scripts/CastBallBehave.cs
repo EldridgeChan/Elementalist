@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class CastBallBehave : MonoBehaviour
 {
-    private Camera mainCam;
     private bool inCastControl = false;
     private Vector2 ballStartPos = Vector2.zero;
     private Vector2 mouseStartPos = Vector2.zero;
     private int castDir = 0;
     private int castDirChangeCounter = 0;
 
-    private void Start()
-    {
-        mainCam = Camera.main;
-        ballStartPos = transform.position;
-    }
-
     public void startCastControl()
     {
+        ballStartPos = transform.position;
         inCastControl = true;
-        mouseStartPos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        mouseStartPos = InputManager.Instance.MainCam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public void endCastControl()
     {
         inCastControl = false;
-        transform.localPosition = Vector2.zero;
+        transform.position = ballStartPos;
         castDir = 0;
         castDirChangeCounter = 0;
     }
@@ -41,7 +35,7 @@ public class CastBallBehave : MonoBehaviour
 
     private void castControl()
     {
-        Vector2 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos = InputManager.Instance.MainCam.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(Mathf.Clamp(mousePos.x - mouseStartPos.x, -GameManager.Instance.GameScriptObj.CastMoveMaxXPos, GameManager.Instance.GameScriptObj.CastMoveMaxXPos), Mathf.Clamp(mousePos.y - mouseStartPos.y, 0.0f, float.MaxValue)) + ballStartPos;
         hasChangeCastDirection(mousePos.x);
     }
@@ -71,6 +65,7 @@ public class CastBallBehave : MonoBehaviour
 
     public void castAction()
     {
+        if (!inCastControl) { return; }
         if (transform.position.y >= GameManager.Instance.GameScriptObj.CastMinYPos)
         {
             GameManager.Instance.GameCon.castCollected();

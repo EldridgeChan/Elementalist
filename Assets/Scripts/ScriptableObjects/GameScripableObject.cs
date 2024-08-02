@@ -26,6 +26,8 @@ public class GameScripableObject : ScriptableObject
     public float SpiritTailPointDistance = 0.2f;
     public float SpiritTailPointOffSetT = 0.05f;
     public float SpiritTailPointExpireTime = 1.0f;
+    public float SpiritWallOffset = 0.5f;
+    public float SpiritHandWallOffset = 1.0f;
 
     [Header("Enemy")]
     public float EnemyDefaultHealth = 100.0f;

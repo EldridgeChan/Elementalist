@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     public void attacked(float damage, SpiritType element)
     {
         currHealth = Mathf.Clamp(currHealth - damage * damageMultiplier(element), 0.0f, GameManager.Instance.GameScriptObj.levelHealth());
-        GameManager.Instance.GameCon.showDamageText(damage * damageMultiplier(element), element);
+        GameManager.Instance.GameCon.showDamageText(damage * damageMultiplier(element), element, IsWeakToElement(element));
         healthBar.setBar(currHealth, GameManager.Instance.GameScriptObj.levelHealth());
         if (currHealth <= 0.0f)
         {
@@ -61,14 +61,23 @@ public class Enemy : MonoBehaviour
         if (element == SpiritType.None || Mathf.Abs((int)element - (int)elemental) == 2)
         {
             return 1.0f;
-        } 
+        }
         else if (element == elemental)
         {
             return 0.0f;
         }
+        else if (IsWeakToElement(element))
+        {
+            return GameManager.Instance.GameScriptObj.WeakElementMul;
+        }
         else
         {
-            return (int)element + 1 % (int)SpiritType.endOfElement == (int)elemental ? GameManager.Instance.GameScriptObj.WeakElementMul : GameManager.Instance.GameScriptObj.StrongElementMul;
+            return GameManager.Instance.GameScriptObj.StrongElementMul;
         }
+    }
+
+    private bool IsWeakToElement(SpiritType element)
+    {
+        return ((int)element + 1) % (int)SpiritType.endOfElement == (int)elemental;
     }
 }

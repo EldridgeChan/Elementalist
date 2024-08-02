@@ -9,6 +9,7 @@ public class Spell
     public string description;
     public SpiritType[] cost;
     public SpellEffect[] effects;
+    public VisualEffect visualEffect = VisualEffect.none;
 
     public void applyEffects()
     {

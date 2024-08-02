@@ -9,11 +9,11 @@ public class DamageText : MonoBehaviour
     [SerializeField]
     TMPro.TMP_Text text;
 
-    public void init(SpiritType element, float amount, Vector2 pos)
+    public void init(SpiritType element, float amount, Vector2 pos, bool isWeak)
     {
         Destroy(gameObject, 2.0f);
         rect.anchoredPosition = pos;
-        text.text = amount + "";
+        text.text = amount + (isWeak ? "!" : "");
         switch (element)
         {
             case SpiritType.None:
