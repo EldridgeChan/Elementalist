@@ -24,11 +24,9 @@ public class LibSpellItem : MonoBehaviour
             descriptionTxt.text = spell.description;
             for (int i = 0; i < costArr.Length; i++)
             {
-                if (i < spell.cost.Length)
-                {
-                    costArr[i].color = GameManager.Instance.GameScriptObj.elemntColors[(int)spell.cost[i] + 1];
-                }
-                costArr[i].enabled = i < spell.cost.Length;
+                int colorIndex = DetermineColor(spell, i);
+                costArr[i].enabled = colorIndex != -1;
+                costArr[i].color = GameManager.Instance.GameScriptObj.elemntColors[Mathf.Clamp(colorIndex, 0, 4)];
             }
         }
         else
@@ -41,5 +39,19 @@ public class LibSpellItem : MonoBehaviour
                 costArr[i].enabled = false;
             }
         }
+    }
+
+    private int DetermineColor(Spell spell, int costElemntIndex)
+    {
+        int sum = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            sum += spell.cost[i];
+            if (costElemntIndex < sum)
+            {
+                return i + 1;
+            }
+        }
+        return -1;
     }
 }

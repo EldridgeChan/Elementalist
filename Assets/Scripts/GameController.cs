@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
     private Animator effectAnmt;
 
     private List<SpiritBehave> collectedSpirits = new List<SpiritBehave>();
+    private int[] collectedElementNumber = new int[] { 0, 0, 0, 0 };
     private List<OverTimeEffect> overTimeEffects = new List<OverTimeEffect>();
 
     private Enemy currEnemy = null;
@@ -79,6 +80,7 @@ public class GameController : MonoBehaviour
     public void addCollected(SpiritBehave spirit)
     {
         collectedSpirits.Add(spirit);
+        collectedElementNumber[(int)spirit.Element]++;
     }
 
     public void releaseCollected()
@@ -92,25 +94,13 @@ public class GameController : MonoBehaviour
 
     public void castCollected()
     {
-        if (GameManager.Instance.SpellScriptObj.castSpell(sortCollected()))
-        {
-
-        }
+        GameManager.Instance.SpellScriptObj.castSpell(collectedElementNumber);
         for (int i = collectedSpirits.Count - 1; i >= 0; i--)
         {
             Destroy(collectedSpirits[i].gameObject);
         }
+        collectedElementNumber = new int[] { 0, 0, 0, 0 };
         collectedSpirits.Clear();
-    }
-
-    private int[] sortCollected()
-    {
-        int[] spirits = new int[] { 0, 0, 0, 0 };
-        for (int i = 0; i < collectedSpirits.Count; i++)
-        {
-            spirits[(int)collectedSpirits[i].Element]++;
-        }
-        return spirits;
     }
 
     private void spiritsNaturalSpawn()

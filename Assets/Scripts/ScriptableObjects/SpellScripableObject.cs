@@ -11,7 +11,7 @@ public class SpellScripableObject : ScriptableObject
     {
         for (int i = 0; i < spells.Length; i++)
         {
-            if (correctSize(spells[i].cost.Length, spirits) && checkCost(spells[i], spirits))
+            if (checkCost(spells[i], spirits))
             {
                 GameManager.Instance.KnowSpells[i] = true;
                 GameManager.Instance.GameCon.PlayMagicVisualEffect(spells[i].visualEffect);
@@ -25,31 +25,13 @@ public class SpellScripableObject : ScriptableObject
 
     private bool checkCost(Spell spell, int[] spirits)
     {
-        int index = 0;
         for (int i = 0; i < 4; i++)
         {
-            for (int j = 0; j < spirits[i]; j++)
+            if (spell.cost[i] != spirits[i])
             {
-                if (spell.cost[index] == (SpiritType)i)
-                {
-                    index++;
-                }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
         }
         return true;
-    }
-
-    private bool correctSize(int size, int[] cost)
-    {
-        int checkSize = 0;
-        for (int i = 0; i < 4; i++)
-        {
-            checkSize += cost[i];
-        }
-        return size == checkSize;
     }
 }

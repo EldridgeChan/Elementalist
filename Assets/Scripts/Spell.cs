@@ -7,7 +7,7 @@ public class Spell
 {
     public string name;
     public string description;
-    public SpiritType[] cost;
+    public int[] cost;
     public SpellEffect[] effects;
     public VisualEffect visualEffect = VisualEffect.none;
 
