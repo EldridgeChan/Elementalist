@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spells:
   - name: Fire Ball
-    description: Shoot a fire ball. Deal 30 damge.
+    description: Shoot a fire ball. Deals 30 fire damge.
     cost: 0000000000000000
     effects:
     - effectType: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
       number: 0
     visualEffect: 0
   - name: Wind Blade
-    description: Cut enemy with wind. Deal 30 damge.
+    description: Cut enemy with wind. Deals 30 wind damge.
     cost: 0100000001000000
     effects:
     - effectType: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
       number: 0
     visualEffect: 1
   - name: Rock Shot
-    description: Shoot enemy with a rock. Deal 30 damage.
+    description: Shoot enemy with a rock. Deals 30 earth damage.
     cost: 0200000002000000
     effects:
     - effectType: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
       number: 0
     visualEffect: 2
   - name: Water Slash
-    description: Slash enemy with water blade. Deal 30 damage.
+    description: Slash enemy with water blade. Deals 30 water damage.
     cost: 0300000003000000
     effects:
     - effectType: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
       number: 0
     visualEffect: 3
   - name: Steam Shot
-    description: Burn enemy with steam. Deal 40 damage.
+    description: Burn enemy with steam. Deals 40 physical damage.
     cost: 000000000000000003000000
     effects:
     - effectType: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
       number: 0
     visualEffect: 5
   - name: Healing WInd
-    description: Blow a wind that heal your wound. Heal 50 damage.
+    description: Blow a wind that heal your wound. Heal 50 hp.
     cost: 010000000100000002000000
     effects:
     - effectType: 3
@@ -84,7 +84,8 @@ MonoBehaviour:
       number: 0
     visualEffect: 6
   - name: Splinter Turnado
-    description: Cut enemy with a turnado with stone in it. dead 50 damage in 5 second.
+    description: Cut enemy with splinter through a turnado. Deals 50 physical damage
+      in 5 second.
     cost: 010000000200000002000000
     effects:
     - effectType: 1
@@ -144,7 +145,7 @@ MonoBehaviour:
       number: 6
     visualEffect: 8
   - name: Chikyuu Hakai Bakudan
-    description: A powerful Explosion. Destroy all Monster. Along with the panet.
+    description: A powerful Explosion. Destroy all Monster. Along with the planet.
     cost: 000000000000000000000000010000000100000001000000020000000200000002000000030000000300000003000000
     effects:
     - effectType: 5
