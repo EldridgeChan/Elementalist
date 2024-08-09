@@ -1,4 +1,4 @@
-I do not claim the ownership of this asset.
+The ownership of the asset belongs to ppeldo.
 This free asset is downloaded at: 
 https://ppeldo.itch.io/2d-pixel-art-game-spellmagic-fx
 Download date: 2/8/2024

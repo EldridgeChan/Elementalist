@@ -1,4 +1,4 @@
-I do not claim the ownership of this asset.
+The ownership of the assest belongs to admurin.
 This free assest is downloaded at:
 https://admurin.itch.io/parallax-backgrounds-caves
 

@@ -1,4 +1,4 @@
-I do not own this asset.
+The ownership of this asset belongs to bdragon1727.
 This free asset is downloaded at: 
 https://bdragon1727.itch.io/free-effect-and-bullet-16x16
 Download date: 2/8/2024

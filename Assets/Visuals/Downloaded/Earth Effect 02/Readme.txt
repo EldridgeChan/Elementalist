@@ -1,4 +1,4 @@
-I do not claim the ownership of this asset.
+The ownership of this assest belongs to pimen.
 This free asset is downloaded at: 
 https://pimen.itch.io/earth-spell-effect-2
 Download date: 2/8/2024
